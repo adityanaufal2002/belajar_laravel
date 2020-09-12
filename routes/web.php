@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//closure
+Route::get('/profil', function() {
+	return "profil siswa";
+})->name('profil');
+
+//route name
+Route::get("/testname", function() {
+	return route('profil');
+});
+
+//parameter
+Route::get('/profil/{id}', function($id) {
+	return $id;
+});
+
+//controller
+Route::get('/tescontroller', 'TesController@show');
+
+//resource
+Route::resource('siswa', 'siswacontroller');
+
