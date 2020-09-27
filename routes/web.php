@@ -14,27 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
 
 //closure
-Route::get('/profil', function() {
-	return "profil siswa";
-})->name('profil');
+// Route::get('/profil', function() {
+// 	return "profil siswa";
+// })->name('profil');
 
-//route name
-Route::get("/testname", function() {
-	return route('profil');
-});
+// //route name
+// Route::get("/testname", function() {
+// 	return route('profil');
+// });
 
-//parameter
-Route::get('/profil/{id}', function($id) {
-	return $id;
-});
+// //parameter
+// Route::get('/profil/{id}', function($id) {
+// 	return $id;
+// });
 
-//controller
-Route::get('/tescontroller', 'TesController@show');
+// //controller
+// Route::get('/tescontroller', 'TesController@show');
 
-//resource
-Route::resource('siswa', 'siswacontroller');
+// //resource
+// Route::resource('siswa', 'siswacontroller');
 
